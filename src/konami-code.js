@@ -1,16 +1,18 @@
+/* global define, module */
+
 /**
  * Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left Right B A » on specific HTMLElement or on global HTMLDocument.
  * @class KonamiCode
- * @version 0.3.0
+ * @version 0.4.0
  * @author {@link http://www.lesieur.name/|Bruno Lesieur}
  * @param {Object|Function} [options]             - Container for all options. If type of `options` is Function, it is executed after Konami Code Sequence has been recognize.
  * @param {Function}        [options.callback]    - If `options` is not a Function, `options.callback` is executed after Konami Code Sequence has been entered.
  * @param {Node}            [options.listener]    - By default it is the HTMLDocument `window.document`. You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element.
  * @param {boolean}         [options.debug]       - By default it is set to `false`. When you set this value to `true`, that allows you to see all debug message in the console.
  */
-(function (factory) {
-    var initialClass = window.KonamiCode,
-        api = window.KonamiCode = factory;
+(function (root, factory) {
+    var initialClass = root.KonamiCode,
+        api = root.KonamiCode = factory;
 
     /**
      * If a previous `KonamiCode` variable exist into global environment, you could kept it by changing name of current KonamiCode.
@@ -26,10 +28,20 @@
      * </script>
      */
     api.noConflict = function () {
-        window.KonamiCode = initialClass;
+        root.KonamiCode = initialClass;
         return api;
     };
-}(function (options) {
+
+	if (typeof define === "function" && define.amd) {
+		define(function () {
+			return factory;
+		});
+	}
+
+	if (typeof module === "object" && module.exports) {
+		module.exports = factory;
+  	}
+}(this, function (options) {
 	var publics = this,
         privates = {};
 

@@ -1,16 +1,9 @@
-# KonamiCodeJS #
-
-Fire a JavaScript Event when you enter the « Up Up Bottom Bottom Left Right Left Right B A » Konami Code Sequence.
-
-
-
-
-
-## API Documentation ##
 <a name="KonamiCode"></a>
 
-**Version**: 0.4.0
-**Author:** [Bruno Lesieur](http://www.lesieur.name/)
+## KonamiCode
+**Kind**: global class  
+**Version**: 0.3.0  
+**Author:** [Bruno Lesieur](http://www.lesieur.name/)  
 
 * [KonamiCode](#KonamiCode)
     * [new KonamiCode([options])](#new_KonamiCode_new)
@@ -40,16 +33,19 @@ Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left R
 ### konamiCode.enable()
 Active the listening of Konami Code Sequence.
 
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>  
 <a name="KonamiCode+disable"></a>
 
 ### konamiCode.disable()
 Unactive the listening of Konami Code Sequence.
 
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>  
 <a name="KonamiCode+setListener"></a>
 
 ### konamiCode.setListener(listener)
 Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously `disable()`.
 
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -60,6 +56,7 @@ Change the listener. The old listener will no longer work. Note: change the list
 ### konamiCode.setCallback(callback)
 Change the Function executed after Konami Code Sequence has been entered.
 
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -68,49 +65,10 @@ Change the Function executed after Konami Code Sequence has been entered.
 <a name="KonamiCode.noConflict"></a>
 
 ### KonamiCode.noConflict()
-If a previous `KonamiCode` variable exist into global environment, you could kept it by changing name of current KonamiCode.
-You can also just use that function to change the name of Global « KonamiCode » variable.
+If a previous `KonamiCode` variable exist into global environment, you could kept it by changing name of current KonamiCode.You can also just use that function to change the name of Global « KonamiCode » variable.
 
-**Example**
+**Kind**: static method of <code>[KonamiCode](#KonamiCode)</code>  
+**Example**  
 ```js
-<script src="other/konami-code.js"></script>
-<script src="last/konami-code.js"></script>
-<script>
- 	var MyKC = KonamiCode.noConflict();
- 	console.log(KonamiCode); // Return the other KonamiCode
- 	console.log(MyKC); // Return your KonamiCode
-</script>
-```
-
-
-
-
-
-## Import JavaScript File ##
-
-### From CDN ###
-
-- For development:
-
-```html
-<script src="https://rawgit.com/Haeresis/konami-code-js/master/src/konami-code.js"></script>
-```
-
-- For production:
-
-```html
-<script src="https://cdn.rawgit.com/Haeresis/konami-code-js/master/src/konami-code.js"></script>
-```
-
-### With AMD Loader ###
-
-```html
-<script src="require.js"></script>
-<script>
-	requirejs(["konami-code"], function (KonamiCode) {
-	    new KonamiCode(function () {
-	    	console.log("My Ester Egg !");
-	    });
-	});
-</script>
+<script src="other/konami-code.js"></script><script src="last/konami-code.js"></script><script> 	var MyKC = KonamiCode.noConflict(); 	console.log(KonamiCode); // Return the other KonamiCode 	console.log(MyKC); // Return your KonamiCode</script>
 ```

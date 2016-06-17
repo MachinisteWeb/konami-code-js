@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Default</title>
+	</head>
+	<body>
+		<h1>Default</h1>
+		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » on your keyboard and see in the `console` a default message.</p>
+		<script src="../src/konami-code.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.2.0/require.min.js"></script>
+		<script>
+			/* global requirejs */
+			requirejs(["../src/konami-code"], function (KonamiCode) {
+			    new KonamiCode(function () {
+			    	console.log("AMD !");
+			    });
+			});
+			new KonamiCode(function () {
+				console.log("Standard !");
+			});
+		</script>
+	</body>
+</html>
