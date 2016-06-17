@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>With Callback</title>
+	</head>
+	<body>
+		<h1>With Callback</h1>
+		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » and see the « Done » alert message.</p>
+		<script src="../src/konami-code.js"></script>
+		<script>
+			/* global KonamiCode */
+			new KonamiCode(function () {
+				alert("Done");
+			});
+		</script>
+	</body>
+</html>
