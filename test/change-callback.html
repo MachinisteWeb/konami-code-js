@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Change Callback</title>
+	</head>
+	<body>
+		<h1>Change Callback</h1>
+		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » from input A and « Done First » alert message appear. <br> After, redo that and see the « Done Second » Alert.</p>
+		<script src="../src/konami-code.js"></script>
+		<script>
+			/* global KonamiCode */
+			var kc = new KonamiCode({
+				debug: true,
+				callback: function () {
+					kc.setCallback(function () {
+						alert("Done Second");
+					});
+					alert("Done First");
+				}
+			});
+		</script>
+	</body>
+</html>

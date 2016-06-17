@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Debug Mode</title>
+	</head>
+	<body>
+		<h1>Debug Mode</h1>
+		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » and nothing append in the console but the « Done » alert message is raised.</p>
+		<script src="../src/konami-code.js"></script>
+		<script>
+			/* global KonamiCode */
+			new KonamiCode({
+				debug: false,
+				callback: function () {
+					alert("Done");
+				}
+			});
+		</script>
+	</body>
+</html>

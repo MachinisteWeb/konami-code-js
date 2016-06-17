@@ -10,9 +10,11 @@
 		<script src="../src/konami-code.js"></script>
 		<script>
 			/* global KonamiCode */
-			new KonamiCode(function () {
+			var callback = function () {
 				alert("Done");
-			});
+			};
+			callback.debug = true;
+			new KonamiCode(callback);
 		</script>
 	</body>
 </html>

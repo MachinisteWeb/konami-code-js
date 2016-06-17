@@ -12,10 +12,11 @@
 		<script>
 			/* global KonamiCode */
 			new KonamiCode({
+				debug: true,
 				callback: function () {
 					alert("Done");
 				},
-				sender: document.getElementsByTagName("input")[0]
+				listener: document.getElementsByTagName("input")[0]
 			});
 		</script>
 	</body>

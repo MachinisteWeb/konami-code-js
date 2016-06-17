@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Enable() / Disable()</title>
+	</head>
+	<body>
+		<h1>Enable/Disable</h1>
+		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » and nothing append. <br> If you switch between Enable/Disable you will be able to see the « Done » alert after try combinaison or not depending the current state.</p>
+		<p><button class="enable">Enable</button> <button class="disable" disabled="true">Disable</button></p>
+		<script src="../src/konami-code.js"></script>
+		<script>
+			/* global KonamiCode */
+			var enable = document.getElementsByClassName("enable")[0],
+				disable = document.getElementsByClassName("disable")[0],
+				kc = new KonamiCode({
+					debug: true,
+					callback: function () {
+						alert("Done");
+					}
+				});
+			kc.disable();
+			enable.addEventListener("click", function () {
+				disable.removeAttribute("disabled");
+				enable.setAttribute("disabled", "true");
+				kc.enable();
+			});
+			disable.addEventListener("click", function () {
+				enable.removeAttribute("disabled");
+				disable.setAttribute("disabled", "true");
+				kc.disable();
+			});
+		</script>
+	</body>
+</html>
