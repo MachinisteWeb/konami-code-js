@@ -4,16 +4,23 @@ Fire a JavaScript Event when you enter the « Up Up Bottom Bottom Left Right Lef
 
 
 
-<a name="KonamiCode"></a>
+
 
 ## API Documentation ##
+<a name="KonamiCode"></a>
+
+**Version**: 0.3.0
+**Author:** [Bruno Lesieur](http://www.lesieur.name/)
 
 * [KonamiCode](#KonamiCode)
     * [new KonamiCode([options])](#new_KonamiCode_new)
-    * [.enable()](#KonamiCode+enable)
-    * [.disable()](#KonamiCode+disable)
-    * [.setListener()](#KonamiCode+setListener)
-    * [.setCallback()](#KonamiCode+setCallback)
+    * _instance_
+        * [.enable()](#KonamiCode+enable)
+        * [.disable()](#KonamiCode+disable)
+        * [.setListener(listener)](#KonamiCode+setListener)
+        * [.setCallback(callback)](#KonamiCode+setCallback)
+    * _static_
+        * [.noConflict()](#KonamiCode.noConflict)
 
 <a name="new_KonamiCode_new"></a>
 
@@ -33,25 +40,47 @@ Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left R
 ### konamiCode.enable()
 Active the listening of Konami Code Sequence.
 
-**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
 <a name="KonamiCode+disable"></a>
 
 ### konamiCode.disable()
 Unactive the listening of Konami Code Sequence.
 
-**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
 <a name="KonamiCode+setListener"></a>
 
-### konamiCode.setListener()
+### konamiCode.setListener(listener)
 Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously `disable()`.
 
-**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| listener | <code>Node</code> | You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element. |
+
 <a name="KonamiCode+setCallback"></a>
 
-### konamiCode.setCallback()
+### konamiCode.setCallback(callback)
 Change the Function executed after Konami Code Sequence has been entered.
 
-**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+
+| Param | Type | Description |
+| --- | --- | --- |
+| callback | <code>function</code> | Function executed after Konami Code Sequence has been entered. |
+
+<a name="KonamiCode.noConflict"></a>
+
+### KonamiCode.noConflict()
+If a previous `KonamiCode` variable exist into global environment, you could kept it by changing name of current KonamiCode.
+You can also just use that function to change the name of Global « KonamiCode » variable.
+
+**Example**  
+```js
+<script src="other/konami-code.js"></script>
+<script src="last/konami-code.js"></script>
+<script>
+ 	var MyKC = KonamiCode.noConflict();
+ 	console.log(KonamiCode); // Return the other KonamiCode
+ 	console.log(MyKC); // Return your KonamiCode
+</script>
+```
 
 
 

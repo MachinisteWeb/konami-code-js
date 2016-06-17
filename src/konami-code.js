@@ -1,14 +1,35 @@
 /**
  * Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left Right B A » on specific HTMLElement or on global HTMLDocument.
  * @class KonamiCode
- * @version 0.2.0
+ * @version 0.3.0
  * @author {@link http://www.lesieur.name/|Bruno Lesieur}
  * @param {Object|Function} [options]             - Container for all options. If type of `options` is Function, it is executed after Konami Code Sequence has been recognize.
  * @param {Function}        [options.callback]    - If `options` is not a Function, `options.callback` is executed after Konami Code Sequence has been entered.
  * @param {Node}            [options.listener]    - By default it is the HTMLDocument `window.document`. You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element.
  * @param {boolean}         [options.debug]       - By default it is set to `false`. When you set this value to `true`, that allows you to see all debug message in the console.
  */
-var KonamiCode = function (options) {
+(function (factory) {
+    var initialClass = window.KonamiCode,
+        api = window.KonamiCode = factory;
+
+    /**
+     * If a previous `KonamiCode` variable exist into global environment, you could kept it by changing name of current KonamiCode.
+     * You can also just use that function to change the name of Global « KonamiCode » variable.
+     * @function noConflict
+     * @memberOf KonamiCode.
+     * @example <script src="other/konami-code.js"></script>
+	 * <script src="last/konami-code.js"></script>
+	 * <script>
+	 *  	var MyKC = KonamiCode.noConflict();
+	 *  	console.log(KonamiCode); // Return the other KonamiCode
+	 *  	console.log(MyKC); // Return your KonamiCode
+     * </script>
+     */
+    api.noConflict = function () {
+        window.KonamiCode = initialClass;
+        return api;
+    };
+}(function (options) {
 	var publics = this,
         privates = {};
 
@@ -35,6 +56,7 @@ var KonamiCode = function (options) {
     /**
      * Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously `disable()`.
      * @function setListener
+ 	 * @param {Node} listener - You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element.
      * @memberOf KonamiCode#
      */
     publics.setListener = function (listener) {
@@ -47,6 +69,7 @@ var KonamiCode = function (options) {
      /**
      * Change the Function executed after Konami Code Sequence has been entered.
      * @function setCallback
+ 	 * @param {Function} callback - Function executed after Konami Code Sequence has been entered.
      * @memberOf KonamiCode#
      */
     publics.setCallback = function (callback) {
@@ -112,4 +135,4 @@ var KonamiCode = function (options) {
 	};
 
 	privates.init();
-};
+}));
