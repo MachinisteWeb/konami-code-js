@@ -1,6 +1,6 @@
 {
   "name": "konami-code-js",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Fire a JavaScript Event when you enter the « Up Up Bottom Bottom Left Right Left Right B A » Konami Code Sequence.",
   "main": "src/konami-code.js",
   "directories": {
@@ -24,7 +24,7 @@
     "support"
   ],
   "author": "Bruno Lesieur",
-  "license": "GPL-2.0",
+  "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/Haeresis/konami-code-js/issues"
   },

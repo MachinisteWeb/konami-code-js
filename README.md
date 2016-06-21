@@ -1,6 +1,10 @@
 # KonamiCodeJS #
 
-Fire a JavaScript Event when you enter the « Up Up Bottom Bottom Left Right Left Right B A » Konami Code Sequence.
+Fire a JavaScript Event when you enter the « Up Up Bottom Bottom Left Right Left Right B A » Konami Code Sequence with your keyboard. That work also when you do the following touch gesture « Up Up Bottom Bottom Left Right Left Right Tap Tap » with your finger.
+
+-----
+
+**Vous êtes français ? Le README [derrière ce lien](http://blog.lesieur.name/des-easter-eggs-avec-konami-code-js/) vous sera peut-être plus agréable.**
 
 
 
@@ -47,7 +51,7 @@ kc.setCallback(function () {
 
 <a name="KonamiCode"></a>
 
-**Version**: 0.5.0
+**Version**: 0.6.0
 
 **Author:** [Bruno Lesieur](http://www.lesieur.name/)
 
@@ -157,7 +161,7 @@ Return the number of time KonamiCode was instanciated.
 
 ## Chaining ##
 
-All public functions return the current instance of KonamiCode. That allows you to use instance like this.
+All API instanciated methods return the current instance of `KonamiCode` Object. That allows you to use instance like this.
 
 ```js
 new KonamiCode()
@@ -194,6 +198,12 @@ new KonamiCode({
 
 
 ## Import JavaScript File ##
+
+### By Direct Download ###
+
+- [https://github.com/Haeresis/konami-code-js/blob/master/src/konami-code.js](https://github.com/Haeresis/konami-code-js/blob/master/src/konami-code.js)
+
+
 
 ### From NPM ###
 
