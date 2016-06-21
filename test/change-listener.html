@@ -7,15 +7,15 @@
 	<body>
 		<h1>Change Listener</h1>
 		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » from input A and « Done » alert message appear. <br> If you retry this will no longer work. <br> But if you test from input B that will work. <br> (If you test first time from B, that will not work)</p>
-		<p>A: <input type="text" placeholder="A" class="input-a"></p>
-		<p>B: <input type="text" placeholder="B" class="input-b"></p>
+		<p>A: <input type="text" placeholder="A" class="input-a" style="width: 400px; height: 400px"></p>
+		<p>B: <textarea type="text" placeholder="B" class="textarea-b" style="width: 400px; height: 400px"></textarea></p>
 		<script src="../src/konami-code.js"></script>
 		<script>
 			/* global KonamiCode */
 			var kc = new KonamiCode({
 				debug: true,
 				callback: function () {
-					kc.setListener(document.getElementsByClassName("input-b")[0]);
+					kc.setListener(document.getElementsByClassName("textarea-b")[0]);
 					alert("Done");
 				},
 				listener: document.getElementsByClassName("input-a")[0]

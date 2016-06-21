@@ -1,0 +1,32 @@
+{
+  "name": "konami-code-js",
+  "version": "0.5.0",
+  "description": "Fire a JavaScript Event when you enter the « Up Up Bottom Bottom Left Right Left Right B A » Konami Code Sequence.",
+  "main": "src/konami-code.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haeresis/konami-code-js.git"
+  },
+  "keywords": [
+    "konami",
+    "code",
+    "ester",
+    "egg",
+    "keyboard",
+    "support",
+    "touch",
+    "support"
+  ],
+  "author": "Bruno Lesieur",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/Haeresis/konami-code-js/issues"
+  },
+  "homepage": "https://github.com/Haeresis/konami-code-js#readme"
+}

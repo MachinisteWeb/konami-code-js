@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Once Time</title>
+	</head>
+	<body>
+		<h1>Once Time</h1>
+		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » on your keyboard and see in the `console` a default message.</p>
+		<script src="../src/konami-code.js"></script>
+		<script>
+			/* global KonamiCode */
+			new KonamiCode({
+				debug: true,
+				callback: function (konamiCode) {
+					konamiCode.disable();
+					console.log("Done");
+				}
+			});
+		</script>
+	</body>
+</html>

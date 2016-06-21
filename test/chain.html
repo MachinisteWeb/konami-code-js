@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Chain</title>
+	</head>
+	<body>
+		<h1>Chain</h1>
+		<p>Just check the console to see all function used (disable, enable, setListener, setCallback).</p>
+		<script src="../src/konami-code.js"></script>
+		<script>
+			/* global KonamiCode */
+			new KonamiCode({
+					debug: true
+				})
+				.disable()
+				.enable()
+				.setListener(document.getElementsByTagName("body")[0])
+				.setCallback(function () {
+				    alert("Done");
+				});
+		</script>
+	</body>
+</html>
