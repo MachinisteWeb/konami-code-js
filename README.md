@@ -48,6 +48,7 @@ kc.setCallback(function () {
 <a name="KonamiCode"></a>
 
 **Version**: 0.5.0
+
 **Author:** [Bruno Lesieur](http://www.lesieur.name/)
 
 * [KonamiCode](#KonamiCode)
@@ -80,21 +81,24 @@ Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left R
 Active the listening of Konami Code Sequence.
 
 **Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
-**Returns**: <code>[KonamiCode](#KonamiCode)</code> - - Current instance of KonamiCode
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
 <a name="KonamiCode+disable"></a>
 
 ### konamiCode.disable() ⇒ <code>[KonamiCode](#KonamiCode)</code>
 Unactive the listening of Konami Code Sequence.
 
 **Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
-**Returns**: <code>[KonamiCode](#KonamiCode)</code> - - Current instance of KonamiCode
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
 <a name="KonamiCode+setListener"></a>
 
 ### konamiCode.setListener(listener) ⇒ <code>[KonamiCode](#KonamiCode)</code>
 Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously `disable()`.
 
 **Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
-**Returns**: <code>[KonamiCode](#KonamiCode)</code> - - Current instance of KonamiCode
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -106,7 +110,8 @@ Change the listener. The old listener will no longer work. Note: change the list
 Change the Function executed after Konami Code Sequence has been entered.
 
 **Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
-**Returns**: <code>[KonamiCode](#KonamiCode)</code> - - Current instance of KonamiCode
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -126,6 +131,7 @@ If a previous `KonamiCode` variable exist into global environment, you could kep
 You can also just use that function to change the name of Global « KonamiCode » variable.
 
 **Kind**: static method of <code>[KonamiCode](#KonamiCode)</code>
+
 **Example**
 ```js
 <script src="other/konami-code.js"></script>
@@ -142,7 +148,8 @@ You can also just use that function to change the name of Global « KonamiCode �
 Return the number of time KonamiCode was instanciated.
 
 **Kind**: static method of <code>[KonamiCode](#KonamiCode)</code>
-**Returns**: <code>number</code> - - Number of KonamiCode instance create from begining.
+
+**Returns**: <code>number</code> - Number of KonamiCode instance create from begining.
 
 
 
@@ -187,6 +194,14 @@ new KonamiCode({
 
 
 ## Import JavaScript File ##
+
+### From NPM ###
+
+```
+npm install konami-code-js
+```
+
+
 
 ### From CDN ###
 

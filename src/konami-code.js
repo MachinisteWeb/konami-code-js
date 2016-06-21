@@ -60,7 +60,7 @@
      * Active the listening of Konami Code Sequence.
      * @function enable
      * @memberOf KonamiCode#
-     * @return {KonamiCode} - Current instance of KonamiCode
+     * @return {KonamiCode} Current instance of KonamiCode
      */
     publics.enable = function () {
         privates.listenCodeSequence();
@@ -73,7 +73,7 @@
      * Unactive the listening of Konami Code Sequence.
      * @function disable
      * @memberOf KonamiCode#
-     * @return {KonamiCode} - Current instance of KonamiCode
+     * @return {KonamiCode} Current instance of KonamiCode
      */
     publics.disable = function () {
         privates.stopCodeSequence();
@@ -87,7 +87,7 @@
      * @function setListener
  	 * @param {Node} listener - You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element.
      * @memberOf KonamiCode#
-     * @return {KonamiCode} - Current instance of KonamiCode
+     * @return {KonamiCode} Current instance of KonamiCode
      */
     publics.setListener = function (listener) {
     	privates.stopCodeSequence();
@@ -103,7 +103,7 @@
      * @function setCallback
  	 * @param {Function} callback - Function executed after Konami Code Sequence has been entered. The first parameter provided by the callback is current instance of KonamiCode.
      * @memberOf KonamiCode#
-     * @return {KonamiCode} - Current instance of KonamiCode
+     * @return {KonamiCode} Current instance of KonamiCode
      * @example new KonamiCode().setCallback(function (konamiCode) {
      *     konamiCode.disable();
      *     // Do something here.
