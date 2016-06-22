@@ -125,6 +125,14 @@ Unactive the listening of Konami Code Sequence for Keyboard Keys.
 **Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
 <a name="KonamiCode+disabledTouchGesture"></a>
 
+### konamiCode.disabledTouchGesture() ⇒ <code>[KonamiCode](#KonamiCode)</code>
+Unactive the listening of Konami Code Sequence for Touch Gesture.
+
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
+<a name="KonamiCode+setListener"></a>
+
 ### konamiCode.setListener(listener) ⇒ <code>[KonamiCode](#KonamiCode)</code>
 Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously `disable()`.
 
