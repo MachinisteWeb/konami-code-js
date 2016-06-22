@@ -59,7 +59,11 @@ kc.setCallback(function () {
     * [new KonamiCode([options])](#new_KonamiCode_new)
     * _instance_
         * [.enable()](#KonamiCode+enable) ⇒ <code>[KonamiCode](#KonamiCode)</code>
+        * [.enableKeyboardKeys()](#KonamiCode+enableKeyboardKeys) ⇒ <code>[KonamiCode](#KonamiCode)</code>
+        * [.enableTouchGesture()](#KonamiCode+enableTouchGesture) ⇒ <code>[KonamiCode](#KonamiCode)</code>
         * [.disable()](#KonamiCode+disable) ⇒ <code>[KonamiCode](#KonamiCode)</code>
+        * [.disabledKeyboardKeys()](#KonamiCode+disabledKeyboardKeys) ⇒ <code>[KonamiCode](#KonamiCode)</code>
+        * [.disabledTouchGesture()](#KonamiCode+disabledTouchGesture) ⇒ <code>[KonamiCode](#KonamiCode)</code>
         * [.setListener(listener)](#KonamiCode+setListener) ⇒ <code>[KonamiCode](#KonamiCode)</code>
         * [.setCallback(callback)](#KonamiCode+setCallback) ⇒ <code>[KonamiCode](#KonamiCode)</code>
     * _static_
