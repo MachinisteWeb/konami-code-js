@@ -3,7 +3,7 @@
 /**
  * Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left Right B A » on specific HTMLElement or on global HTMLDocument. Usage of finger is also possible with « Up Up Bottom Bottom Left Right Left Right Tap Tap ».
  * @class KonamiCode
- * @version 0.6.0
+ * @version 0.7.0
  * @author {@link http://www.lesieur.name/|Bruno Lesieur}
  * @param {Object|Function} [options]             - Container for all options. If type of `options` is Function, it is executed after Konami Code Sequence has been recognize.
  * @param {Function}        [options.callback]    - If `options` is not a Function, `options.callback` is executed after Konami Code Sequence has been entered. The first parameter provided by the callback is current instance of KonamiCode.
@@ -63,8 +63,35 @@
      * @return {KonamiCode} Current instance of KonamiCode
      */
     publics.enable = function () {
-        privates.listenCodeSequence();
-        privates.debug && privates.debug("Listener enabled.");
+        privates.listenCodeCharSequence();
+        privates.listenCodeGestureSequence();
+        privates.debug && privates.debug("Listener enabled for all.");
+
+        return publics;
+    };
+
+    /**
+     * Active the listening of Konami Code Sequence for Keyboard Keys.
+     * @function enableKeyboardKeys
+     * @memberOf KonamiCode#
+     * @return {KonamiCode} Current instance of KonamiCode
+     */
+    publics.enableKeyboardKeys = function () {
+        privates.listenCodeCharSequence();
+        privates.debug && privates.debug("Listener enabled for Keyboard Keys.");
+
+        return publics;
+    };
+
+    /**
+     * Active the listening of Konami Code Sequence for Touch Gesture.
+     * @function enableTouchGesture
+     * @memberOf KonamiCode#
+     * @return {KonamiCode} Current instance of KonamiCode
+     */
+    publics.enableTouchGesture = function () {
+        privates.listenCodeGestureSequence();
+        privates.debug && privates.debug("Listener enabled for Touch Gesture.");
 
         return publics;
     };
@@ -76,23 +103,52 @@
      * @return {KonamiCode} Current instance of KonamiCode
      */
     publics.disable = function () {
-        privates.stopCodeSequence();
-        privates.debug && privates.debug("Listener disabled.");
+        privates.stopCodeCharSequence();
+        privates.stopCodeGestureSequence();
+        privates.debug && privates.debug("Listener disabled for all.");
 
         return publics;
     };
 
     /**
-     * Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously `disable()`.
+     * Unactive the listening of Konami Code Sequence for Keyboard Keys.
+     * @function disabledKeyboardKeys
+     * @memberOf KonamiCode#
+     * @return {KonamiCode} Current instance of KonamiCode
+     */
+    publics.disableKeyboardKeys = function () {
+        privates.stopCodeCharSequence();
+        privates.debug && privates.debug("Listener disabled for Keyboard Keys.");
+
+        return publics;
+    };
+
+    /**
+     * Unactive the listening of Konami Code Sequence for Touch Gesture.
+     * @function disabledTouchGesture
+     * @memberOf KonamiCode#
+     * @return {KonamiCode} Current instance of KonamiCode
+     */
+    publics.disableTouchGesture = function () {
+        privates.stopCodeGestureSequence();
+        privates.debug && privates.debug("Listener disabled for Touch Gesture.");
+
+        return publics;
+    };
+
+    /**
+     * Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously disabled.
      * @function setListener
      * @param {Node} listener - You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element.
      * @memberOf KonamiCode#
      * @return {KonamiCode} Current instance of KonamiCode
      */
     publics.setListener = function (listener) {
-        privates.stopCodeSequence();
+        privates.stopCodeCharSequence();
+        privates.stopCodeGestureSequence();
         privates.listener = listener || document;
-        privates.listenCodeSequence();
+        privates.listenCodeCharSequence();
+        privates.listenCodeGestureSequence();
         privates.debug && privates.debug("Listener changed.", listener);
 
         return publics;
@@ -163,17 +219,24 @@
         privates.capture = true;
     };
 
-    privates.stopCodeSequence = function () {
+    privates.stopCodeCharSequence = function () {
         privates.listener.removeEventListener("keydown", privates.codeSequenceEventKeyDown);
+    };
+
+    privates.stopCodeGestureSequence = function () {
         privates.listener.removeEventListener("touchstart", privates.codeSequenceEventTouchStart);
         privates.listener.removeEventListener("touchmove", privates.codeSequenceEventTouchMove);
         privates.listener.removeEventListener("touchend", privates.codeSequenceEventTouchEnd);
     };
 
-    privates.listenCodeSequence = function () {
-        privates.originalCodeGesture = privates.konamiCodeGesture;
-        privates.stopCodeSequence();
+    privates.listenCodeCharSequence = function () {
+        privates.stopCodeCharSequence();
         privates.listener.addEventListener("keydown", privates.codeSequenceEventKeyDown);
+    };
+
+    privates.listenCodeGestureSequence = function () {
+        privates.originalCodeGesture = privates.konamiCodeGesture;
+        privates.stopCodeGestureSequence();
         privates.listener.addEventListener("touchstart", privates.codeSequenceEventTouchStart);
         privates.listener.addEventListener("touchmove", privates.codeSequenceEventTouchMove);
         privates.listener.addEventListener("touchend", privates.codeSequenceEventTouchEnd, false);
@@ -235,7 +298,8 @@
             (options && typeof options.callback === "function" && options.callback) ||
             privates.defaultCallback;
 
-        privates.listenCodeSequence();
+        privates.listenCodeCharSequence();
+        privates.listenCodeGestureSequence();
     };
 
     privates.init();

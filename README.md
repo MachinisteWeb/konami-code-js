@@ -51,7 +51,7 @@ kc.setCallback(function () {
 
 <a name="KonamiCode"></a>
 
-**Version**: 0.6.0
+**Version**: 0.7.0
 
 **Author:** [Bruno Lesieur](http://www.lesieur.name/)
 
@@ -87,6 +87,22 @@ Active the listening of Konami Code Sequence.
 **Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
 
 **Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
+<a name="KonamiCode+enableKeyboardKeys"></a>
+
+### konamiCode.enableKeyboardKeys() ⇒ <code>[KonamiCode](#KonamiCode)</code>
+Active the listening of Konami Code Sequence for Keyboard Keys.
+
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
+<a name="KonamiCode+enableTouchGesture"></a>
+
+### konamiCode.enableTouchGesture() ⇒ <code>[KonamiCode](#KonamiCode)</code>
+Active the listening of Konami Code Sequence for Touch Gesture.
+
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
 <a name="KonamiCode+disable"></a>
 
 ### konamiCode.disable() ⇒ <code>[KonamiCode](#KonamiCode)</code>
@@ -95,7 +111,15 @@ Unactive the listening of Konami Code Sequence.
 **Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
 
 **Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
-<a name="KonamiCode+setListener"></a>
+<a name="KonamiCode+disabledKeyboardKeys"></a>
+
+### konamiCode.disabledKeyboardKeys() ⇒ <code>[KonamiCode](#KonamiCode)</code>
+Unactive the listening of Konami Code Sequence for Keyboard Keys.
+
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
+<a name="KonamiCode+disabledTouchGesture"></a>
 
 ### konamiCode.setListener(listener) ⇒ <code>[KonamiCode](#KonamiCode)</code>
 Change the listener. The old listener will no longer work. Note: change the listener enable this instance if it is previously `disable()`.

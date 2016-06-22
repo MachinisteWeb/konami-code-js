@@ -7,12 +7,27 @@
 	<body>
 		<h1>Enable/Disable</h1>
 		<p>For succeed this test, push « Up Up Down Down Left Right Left Right B A » and nothing append. <br> If you switch between Enable/Disable you will be able to see the « Done » alert after try combinaison or not depending the current state.</p>
-		<p><button class="enable">Enable</button> <button class="disable" disabled="true">Disable</button></p>
+		<p>
+			<button class="enable">Enable</button>
+			<button class="disable" disabled="true">Disable</button>
+		</p>
+		<p>
+			<button class="enable-keyboard-keys">Enable Keyboard Keys</button>
+			<button class="disable-keyboard-keys" disabled="true">Disable Keyboard Keys</button>
+		</p>
+		<p>
+			<button class="enable-touch-gesture">Enable Touch Gesture</button>
+			<button class="disable-touch-gesture" disabled="true">Disable Touch Gesture</button>
+		</p>
 		<script src="../src/konami-code.js"></script>
 		<script>
 			/* global KonamiCode */
 			var enable = document.getElementsByClassName("enable")[0],
 				disable = document.getElementsByClassName("disable")[0],
+				enableKeyboardKeys = document.getElementsByClassName("enable-keyboard-keys")[0],
+				disableKeyboardKeys = document.getElementsByClassName("disable-keyboard-keys")[0],
+				enableTouchGesture = document.getElementsByClassName("enable-touch-gesture")[0],
+				disableTouchGesture = document.getElementsByClassName("disable-touch-gesture")[0],
 				kc = new KonamiCode({
 					debug: true,
 					callback: function () {
@@ -22,13 +37,61 @@
 			kc.disable();
 			enable.addEventListener("click", function () {
 				disable.removeAttribute("disabled");
+				disableKeyboardKeys.removeAttribute("disabled");
+				disableTouchGesture.removeAttribute("disabled");
 				enable.setAttribute("disabled", "true");
+				enableKeyboardKeys.setAttribute("disabled", "true");
+				enableTouchGesture.setAttribute("disabled", "true");
 				kc.enable();
 			});
 			disable.addEventListener("click", function () {
 				enable.removeAttribute("disabled");
+				enableKeyboardKeys.removeAttribute("disabled");
+				enableTouchGesture.removeAttribute("disabled");
 				disable.setAttribute("disabled", "true");
+				disableKeyboardKeys.setAttribute("disabled", "true");
+				disableTouchGesture.setAttribute("disabled", "true");
 				kc.disable();
+			});
+			enableKeyboardKeys.addEventListener("click", function () {
+				disableKeyboardKeys.removeAttribute("disabled");
+				enableKeyboardKeys.setAttribute("disabled", "true");
+				enable.removeAttribute("disabled");
+				disable.removeAttribute("disabled");
+				if (enableTouchGesture.getAttribute("disabled")) {
+					enable.setAttribute("disabled", "true");
+				}
+				kc.enableKeyboardKeys();
+			});
+			disableKeyboardKeys.addEventListener("click", function () {
+				enableKeyboardKeys.removeAttribute("disabled");
+				disableKeyboardKeys.setAttribute("disabled", "true");
+				enable.removeAttribute("disabled");
+				disable.removeAttribute("disabled");
+				if (disableTouchGesture.getAttribute("disabled")) {
+					disable.setAttribute("disabled", "true");
+				}
+				kc.disableKeyboardKeys();
+			});
+			enableTouchGesture.addEventListener("click", function () {
+				disableTouchGesture.removeAttribute("disabled");
+				enableTouchGesture.setAttribute("disabled", "true");
+				enable.removeAttribute("disabled");
+				disable.removeAttribute("disabled");
+				if (enableKeyboardKeys.getAttribute("disabled")) {
+					enable.setAttribute("disabled", "true");
+				}
+				kc.enableTouchGesture();
+			});
+			disableTouchGesture.addEventListener("click", function () {
+				enableTouchGesture.removeAttribute("disabled");
+				disableTouchGesture.setAttribute("disabled", "true");
+				enable.removeAttribute("disabled");
+				disable.removeAttribute("disabled");
+				if (disableKeyboardKeys.getAttribute("disabled")) {
+					disable.setAttribute("disabled", "true");
+				}
+				kc.disableTouchGesture();
 			});
 		</script>
 	</body>
