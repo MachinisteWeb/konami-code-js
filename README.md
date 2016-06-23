@@ -171,6 +171,7 @@ new KonamiCode().setCallback(function (konamiCode) {
 Change options of instance currently existing.
 
 **Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+
 **Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
 
 | Param | Type | Description |
