@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Options</title>
+	</head>
+	<body>
+		<h1>Options</h1>
+		<p>For succeed this test, push <br> « Up Up Down Down Left Right Left Right B A » <br> and see nothing. <br> In second time, debug mode will <br> be activated in console debug.</p>
+		<script src="../src/konami-code.js"></script>
+		<script>
+			/* global KonamiCode */
+			new KonamiCode({
+				debug: false,
+				callback: function (kc) {
+					alert("First");
+					kc.setOptions({
+						debug: true,
+						callback: function () {
+							alert("Second");
+						},
+						listener: undefined
+					});
+				},
+				listener: document.getElementsByTagName("body")[0]
+			});
+		</script>
+	</body>
+</html>

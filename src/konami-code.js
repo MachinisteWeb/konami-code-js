@@ -3,7 +3,7 @@
 /**
  * Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left Right B A » on specific HTMLElement or on global HTMLDocument. Usage of finger is also possible with « Up Up Bottom Bottom Left Right Left Right Tap Tap ».
  * @class KonamiCode
- * @version 0.7.0
+ * @version 0.8.0
  * @author {@link http://www.lesieur.name/|Bruno Lesieur}
  * @param {Object|Function} [options]             - Container for all options. If type of `options` is Function, it is executed after Konami Code Sequence has been recognize.
  * @param {Function}        [options.callback]    - If `options` is not a Function, `options.callback` is executed after Konami Code Sequence has been entered. The first parameter provided by the callback is current instance of KonamiCode.
@@ -172,6 +172,22 @@
         return publics;
     };
 
+    /**
+     * Change options of instance currently existing.
+     * @function setOptions
+     * @param {Object}   [options]          - Container for all options.
+     * @param {Function} [options.callback] - Function executed after Konami Code Sequence has been entered. The first parameter provided by the callback is current instance of KonamiCode.
+     * @param {Node}     [options.listener] - By default it is the HTMLDocument `window.document`. You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element.
+     * @param {boolean}  [options.debug]    - By default it is set to `false`. When you set this value to `true`, that allows you to see all debug message in the console.
+     * @memberOf KonamiCode#
+     * @return {KonamiCode} Current instance of KonamiCode
+     */
+    publics.setOptions = function (options) {
+        privates.initOptions(options);
+
+        return publics;
+    };
+
     privates.keptLastCodeChar = function () {
         if (privates.input.length > privates.konamiCodeChar.length) {
             privates.input = privates.input.substr((privates.input.length - privates.konamiCodeChar.length));
@@ -263,7 +279,7 @@
         }
     };
 
-    privates.checkDebugMode = function () {
+    privates.checkDebugMode = function (options) {
         if (options && options.debug === true) {
             privates.debug = function (message, obj) {
                 if (obj !== undefined) {
@@ -278,8 +294,16 @@
         }
     };
 
-    privates.init = function () {
+    privates.initOptions = function (options) {
+        privates.checkDebugMode(options);
         privates.listener = (options && options.listener) || document;
+        privates.afterCodeSequenceCallback =
+            (typeof options === "function" && options) ||
+            (options && typeof options.callback === "function" && options.callback) ||
+            privates.defaultCallback;
+    };
+
+    privates.init = function () {
         privates.input = "";
         privates.konamiCodeChar = "38384040373937396665";
         privates.konamiCodeGesture = "upupdndnltrtltrttptp";
@@ -291,12 +315,7 @@
         privates.capture = false;
         statics._numberOfInstance = (statics._numberOfInstance) ? statics._numberOfInstance + 1 : 1;
 
-        privates.checkDebugMode();
-
-        privates.afterCodeSequenceCallback =
-            (typeof options === "function" && options) ||
-            (options && typeof options.callback === "function" && options.callback) ||
-            privates.defaultCallback;
+        privates.initOptions(options);
 
         privates.listenCodeCharSequence();
         privates.listenCodeGestureSequence();

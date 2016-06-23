@@ -51,7 +51,7 @@ kc.setCallback(function () {
 
 <a name="KonamiCode"></a>
 
-**Version**: 0.7.0
+**Version**: 0.8.0
 
 **Author:** [Bruno Lesieur](http://www.lesieur.name/)
 
@@ -66,6 +66,7 @@ kc.setCallback(function () {
         * [.disabledTouchGesture()](#KonamiCode+disabledTouchGesture) ⇒ <code>[KonamiCode](#KonamiCode)</code>
         * [.setListener(listener)](#KonamiCode+setListener) ⇒ <code>[KonamiCode](#KonamiCode)</code>
         * [.setCallback(callback)](#KonamiCode+setCallback) ⇒ <code>[KonamiCode](#KonamiCode)</code>
+        * [.setOptions([options])](#KonamiCode+setOptions) ⇒ <code>[KonamiCode](#KonamiCode)</code>
     * _static_
         * [.noConflict()](#KonamiCode.noConflict)
         * [.getNumberOfInstance()](#KonamiCode.getNumberOfInstance) ⇒ <code>number</code>
@@ -164,6 +165,21 @@ new KonamiCode().setCallback(function (konamiCode) {
     // Do something here.
 });
 ```
+<a name="KonamiCode+setOptions"></a>
+
+### konamiCode.setOptions([options]) ⇒ <code>[KonamiCode](#KonamiCode)</code>
+Change options of instance currently existing.
+
+**Kind**: instance method of <code>[KonamiCode](#KonamiCode)</code>
+**Returns**: <code>[KonamiCode](#KonamiCode)</code> - Current instance of KonamiCode
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [options] | <code>Object</code> | Container for all options. |
+| [options.callback] | <code>function</code> | Function executed after Konami Code Sequence has been entered. The first parameter provided by the callback is current instance of KonamiCode. |
+| [options.listener] | <code>Node</code> | By default it is the HTMLDocument `window.document`. You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element. |
+| [options.debug] | <code>boolean</code> | By default it is set to `false`. When you set this value to `true`, that allows you to see all debug message in the console. |
+
 <a name="KonamiCode.noConflict"></a>
 
 ### KonamiCode.noConflict()
