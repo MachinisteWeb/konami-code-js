@@ -4,7 +4,7 @@
  * Create Konami Code Sequence recognition « Up Up Bottom Bottom Left Right Left Right B A » on specific HTMLElement or on global HTMLDocument. Usage of finger is also possible with « Up Up Bottom Bottom Left Right Left Right Tap Tap ».
  * @class KonamiCode
  * @version 0.8.0
- * @author {@link http://www.lesieur.name/|Bruno Lesieur}
+ * @author {@link https://www.lesieur.name/|Bruno Lesieur}
  * @param {Object|Function} [options]             - Container for all options. If type of `options` is Function, it is executed after Konami Code Sequence has been recognize.
  * @param {Function}        [options.callback]    - If `options` is not a Function, `options.callback` is executed after Konami Code Sequence has been entered. The first parameter provided by the callback is current instance of KonamiCode.
  * @param {Node}            [options.listener]    - By default it is the HTMLDocument `window.document`. You can pass some HTMLElement like `<input>` (HTMLInputElement) to only recognize Konami Code Sequence from this element.

@@ -53,7 +53,7 @@ kc.setCallback(function () {
 
 **Version**: 0.8.0
 
-**Author:** [Bruno Lesieur](http://www.lesieur.name/)
+**Author:** [Bruno Lesieur](https://www.lesieur.name/)
 
 * [KonamiCode](#KonamiCode)
     * [new KonamiCode([options])](#new_KonamiCode_new)
