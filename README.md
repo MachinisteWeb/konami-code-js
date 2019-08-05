@@ -302,7 +302,7 @@ npm install konami-code-js
 ### With CommonJS Loader ###
 
 ```js
-var KonamiCode = require("konami-code");
+var KonamiCode = require("konami-code-js");
 
 new KonamiCode(function () {
     // Do something here.
