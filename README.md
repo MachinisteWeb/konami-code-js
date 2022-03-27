@@ -254,7 +254,7 @@ new KonamiCode({
 
 ### By Direct Download ###
 
-- [https://github.com/Haeresis/konami-code-js/blob/master/src/konami-code.js](https://github.com/Haeresis/konami-code-js/blob/master/src/konami-code.js)
+- [https://github.com/MachinisteWeb/konami-code-js/blob/master/src/konami-code.js](https://github.com/MachinisteWeb/konami-code-js/blob/master/src/konami-code.js)
 
 
 
@@ -271,13 +271,13 @@ npm install konami-code-js
 - For development:
 
 ```html
-<script src="https://rawgit.com/Haeresis/konami-code-js/master/src/konami-code.js"></script>
+<script src="https://rawgit.com/MachinisteWeb/konami-code-js/master/src/konami-code.js"></script>
 ```
 
 - For production:
 
 ```html
-<script src="https://cdn.rawgit.com/Haeresis/konami-code-js/master/src/konami-code.js"></script>
+<script src="https://cdn.rawgit.com/MachinisteWeb/konami-code-js/master/src/konami-code.js"></script>
 ```
 
 
