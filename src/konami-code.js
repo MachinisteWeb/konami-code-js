@@ -41,7 +41,7 @@
     if (typeof module === "object" && module.exports) {
         module.exports = factory;
     }
-}(this ?? globalThis, function callee(options) {
+}(this || globalThis, function callee(options) {
     var publics = this,
         privates = {},
         statics = callee;
