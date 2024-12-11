@@ -24,7 +24,7 @@
     "support"
   ],
   "author": "Bruno Lesieur",
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-or-later",
   "bugs": {
     "url": "https://github.com/MachinisteWeb/konami-code-js/issues"
   },
