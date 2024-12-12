@@ -51,7 +51,7 @@ kc.setCallback(function () {
 
 <a name="KonamiCode"></a>
 
-**Version**: 0.8.2
+**Version**: 0.8.3
 
 **Author:** [Bruno Lesieur](https://www.lesieur.name/)
 
